@@ -52,9 +52,9 @@ namespace TrueCrypt
 					if (!execFunctor)
 						args[argIndex++] = const_cast <char*> (processName.c_str());
 
-					foreach (const string &arg, arguments)
+					for (list<string>::const_iterator arg=arguments.begin(); arg != arguments.end(); ++arg)
 					{
-						args[argIndex++] = const_cast <char*> (arg.c_str());
+						args[argIndex++] = const_cast <char*> ((*arg).c_str());
 					}
 					args[argIndex] = nullptr;
 
