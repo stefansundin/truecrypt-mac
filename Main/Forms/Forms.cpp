@@ -263,8 +263,6 @@ MainFrameBase::MainFrameBase( wxWindow* parent, wxWindowID id, const wxString& t
 	VolumeStaticBoxSizer = new wxStaticBoxSizer( new wxStaticBox( MainPanel, wxID_ANY, _("Volume") ), wxVERTICAL );
 	
 	VolumeGridBagSizer = new wxGridBagSizer( 0, 0 );
-	VolumeGridBagSizer->AddGrowableCol( 1 );
-	VolumeGridBagSizer->AddGrowableRow( 0 );
 	VolumeGridBagSizer->SetFlexibleDirection( wxBOTH );
 	VolumeGridBagSizer->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
 	
@@ -307,6 +305,9 @@ MainFrameBase::MainFrameBase( wxWindow* parent, wxWindowID id, const wxString& t
 	
 	VolumeGridBagSizer->Add( bSizer21, wxGBPosition( 1, 3 ), wxGBSpan( 1, 1 ), wxEXPAND, 5 );
 	
+	VolumeGridBagSizer->AddGrowableCol( 1 );
+	VolumeGridBagSizer->AddGrowableRow( 0 );
+
 	VolumeStaticBoxSizer->Add( VolumeGridBagSizer, 1, wxEXPAND|wxALL, 4 );
 	
 	LowStaticBoxSizer->Add( VolumeStaticBoxSizer, 1, wxEXPAND, 5 );
@@ -1442,7 +1443,6 @@ MountOptionsDialogBase::MountOptionsDialogBase( wxWindow* parent, wxWindowID id,
 	bSizer54->Add( bSizer55, 1, wxEXPAND, 5 );
 	
 	FilesystemOptionsSizer = new wxGridBagSizer( 0, 0 );
-	FilesystemOptionsSizer->AddGrowableCol( 1 );
 	FilesystemOptionsSizer->SetFlexibleDirection( wxBOTH );
 	FilesystemOptionsSizer->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
 	FilesystemOptionsSizer->SetEmptyCellSize( wxSize( 0,0 ) );
@@ -1468,6 +1468,8 @@ MountOptionsDialogBase::MountOptionsDialogBase( wxWindow* parent, wxWindowID id,
 	FilesystemOptionsTextCtrl = new wxTextCtrl( m_panel8, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
 	FilesystemOptionsSizer->Add( FilesystemOptionsTextCtrl, wxGBPosition( 2, 1 ), wxGBSpan( 1, 2 ), wxALIGN_CENTER_VERTICAL|wxEXPAND|wxTOP|wxRIGHT|wxLEFT, 5 );
 	
+	FilesystemOptionsSizer->AddGrowableCol( 1 );
+
 	bSizer54->Add( FilesystemOptionsSizer, 0, wxEXPAND, 5 );
 	
 	sbSizer28->Add( bSizer54, 0, wxEXPAND|wxBOTTOM, 5 );
@@ -2892,7 +2894,6 @@ VolumePasswordPanelBase::VolumePasswordPanelBase( wxWindow* parent, wxWindowID i
 	bSizer7 = new wxBoxSizer( wxVERTICAL );
 	
 	GridBagSizer = new wxGridBagSizer( 0, 0 );
-	GridBagSizer->AddGrowableCol( 1 );
 	GridBagSizer->SetFlexibleDirection( wxBOTH );
 	GridBagSizer->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
 	GridBagSizer->SetEmptyCellSize( wxSize( 0,0 ) );
@@ -2950,6 +2951,8 @@ VolumePasswordPanelBase::VolumePasswordPanelBase( wxWindow* parent, wxWindowID i
 	
 	GridBagSizer->Add( PasswordPlaceholderSizer, wxGBPosition( 8, 1 ), wxGBSpan( 1, 2 ), wxTOP|wxEXPAND, 5 );
 	
+	GridBagSizer->AddGrowableCol( 1 );
+
 	bSizer7->Add( GridBagSizer, 1, wxALL|wxEXPAND, 5 );
 	
 	this->SetSizer( bSizer7 );
