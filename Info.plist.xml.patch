@@ -1,0 +1,68 @@
+--- Info.plist.xml.original-7.1a	2012-02-07 02:36:48.000000000 -0800
++++ Info.plist.xml	2015-05-15 22:05:26.000000000 -0700
+@@ -30,15 +30,63 @@
+ 	<string>0</string>
+ 
+ 	<key>CFBundleShortVersionString</key>
+-	<string>_VERSION_</string>
++	<string>7.1.2</string>
+ 
+ 	<key>CFBundleLongVersionString</key>
+-	<string>TrueCrypt _VERSION_</string>
++	<string>TrueCrypt 7.1.2</string>
+ 
+ 	<key>LSRequiresCarbon</key>
+ 	<true/>
+ 
+ 	<key>CSResourcesFileMapped</key>
+ 	<true/>
++
++	<key>UTExportedTypeDeclarations</key>
++	<array>
++		<dict>
++			<key>UTTypeIdentifier</key>
++			<string>org.TrueCryptFoundation.TrueCrypt.file-container</string>
++			<key>UTTypeReferenceURL</key>
++			<string>http://truecrypt.org</string>
++			<key>UTTypeDescription</key>
++			<string>TrueCrypt File Container</string>
++			<key>UTTypeIconFile</key>
++			<string>TrueCrypt.icns</string>
++			<key>UTTypeConformsTo</key>
++			<array>
++				<string>public.data</string>
++				<string>public.item</string>
++			</array>
++			<key>UTTypeTagSpecification</key>
++			<dict>
++				<key>com.apple.ostype</key>
++				<string>TRUE</string>
++				<key>public.filename-extension</key>
++				<array>
++					<string>tc</string>
++				</array>
++				<key>public.mime-type</key>
++				<string>application/x-truecrypt</string>
++			</dict>
++		</dict>
++	</array>
++
++	<key>CFBundleDocumentTypes</key>
++	<array>
++		<dict>
++			<key>CFBundleTypeName</key>
++			<string>TrueCrypt File Container</string>
++			<key>LSItemContentTypes</key>
++			<array>
++				<string>org.TrueCryptFoundation.TrueCrypt.file-container</string>
++			</array>
++			<key>CFBundleTypeIconFile</key>
++			<string>TrueCrypt.icns</string>
++			<key>CFBundleTypeRole</key>
++			<string>Viewer</string>
++			<key>LSHandlerRank</key>
++			<string>Owner</string>
++		</dict>
++	</array>
+ </dict>
+ </plist>

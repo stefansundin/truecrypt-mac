@@ -1,0 +1,8 @@
+Thumbs.db
+.DS_Store
+*.swp
+
+TrueCrypt.app
+Info.plist.xml
+*.dmg
+image-resources.xml
