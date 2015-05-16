@@ -1,0 +1,12 @@
+diff -urN TrueCrypt 7.1a.mpkg/Contents/distribution.dist TrueCrypt 7.1a Yosemite Fix.mpkg/Contents/distribution.dist
+--- TrueCrypt 7.1a.mpkg/Contents/distribution.dist	2015-05-15 17:27:46.000000000 -0700
++++ TrueCrypt 7.1a Yosemite Fix.mpkg/Contents/distribution.dist	2015-05-15 17:29:41.000000000 -0700
+@@ -10,7 +10,7 @@
+ 
+ 
+ function pm_install_check() {
+-  if(!(system.version.ProductVersion >= '10.4.0')) {
++  if (system.compareVersions(system.version.ProductVersion,'10.4.0') &lt; 0) {
+     my.result.title = 'Error';
+     my.result.message = 'TrueCrypt requires Mac OS X 10.4 or later.';
+     my.result.type = 'Fatal';
