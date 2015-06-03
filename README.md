@@ -7,7 +7,7 @@ Changes:
 - The installer has been patched to be compatible with OS X 10.10.
 - The file extension `.tc` is associated with TrueCrypt.
 
-The TrueCrypt binary has not changed or recompiled.
+The TrueCrypt binary has not been changed or recompiled.
 
 ## Patch it yourself
 
