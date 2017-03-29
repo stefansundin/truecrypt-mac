@@ -6,3 +6,4 @@ TrueCrypt.app
 Info.plist.xml
 *.dmg
 image-resources.xml
+*.sig

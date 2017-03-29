@@ -4,14 +4,22 @@ You can either download the installer directly from [the releases](https://githu
 
 Changes:
 
-- The installer has been patched to be compatible with OS X 10.10.
-- The file extension `.tc` is associated with TrueCrypt.
+- The installer has been patched to be compatible with OS X >= 10.10.
+- The file extension `.tc` has been associated with TrueCrypt.
 
 The TrueCrypt binary has not been changed or recompiled.
 
 ## Patch it yourself
 
 ```bash
+# verify original file
+echo "b8f9cd4fe791df250eb22c9445933b0c5d8c94bb54de316e857eebf4  TrueCrypt 7.1a Mac OS X.dmg" | shasum -a 512224 -c
+# option 2
+gpg --keyserver pgp.mit.edu --recv-keys 0xE3BA73CAF0D6B1E0
+echo iEYEABEIAAYFAk8xjWYACgkQ47pzyvDWseC0PgCeI5sn/Uh/kURfCIE/4yBYxAVk7JQAnRrP4Ugi7yergjQCuJvyY80YjxOw | base64 -D > 'TrueCrypt 7.1a Mac OS X.dmg.sig'
+gpg 'TrueCrypt 7.1a Mac OS X.dmg.sig'
+
+# create writable dmg
 hdiutil convert 'TrueCrypt 7.1a Mac OS X.dmg' -format UDRW -o 'TrueCrypt 7.1a Mac OS X writable.dmg'
 hdiutil attach 'TrueCrypt 7.1a Mac OS X writable.dmg'
 
@@ -25,6 +33,7 @@ plutil -convert binary1 -o TrueCrypt.app/Contents/Info.plist Info.plist.xml
 rm -rf '/Volumes/TrueCrypt 7.1a/TrueCrypt 7.1a.mpkg/Contents/Packages/TrueCrypt.pkg'
 pkgbuild --root TrueCrypt.app --identifier org.TrueCryptFoundation.TrueCrypt '/Volumes/TrueCrypt 7.1a/TrueCrypt 7.1a.mpkg/Contents/Packages/TrueCrypt.pkg'
 
+# create final dmg
 hdiutil detach '/Volumes/TrueCrypt 7.1a'
 hdiutil convert 'TrueCrypt 7.1a Mac OS X writable.dmg' -format UDBZ -o 'TrueCrypt 7.1a Mac OS X (patched).dmg'
 ```
