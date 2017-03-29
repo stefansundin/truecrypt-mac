@@ -21,7 +21,7 @@ gpg 'TrueCrypt 7.1a Mac OS X.dmg.sig'
 
 # create writable dmg
 hdiutil convert 'TrueCrypt 7.1a Mac OS X.dmg' -format UDRW -o 'TrueCrypt 7.1a Mac OS X writable.dmg'
-hdiutil attach 'TrueCrypt 7.1a Mac OS X writable.dmg'
+hdiutil attach -mountpoint '/Volumes/TrueCrypt 7.1a' 'TrueCrypt 7.1a Mac OS X writable.dmg'
 
 # patch installer
 patch '/Volumes/TrueCrypt 7.1a/TrueCrypt 7.1a.mpkg/Contents/distribution.dist' distribution.dist.patch
@@ -30,12 +30,14 @@ patch '/Volumes/TrueCrypt 7.1a/TrueCrypt 7.1a.mpkg/Contents/distribution.dist' d
 pax -f '/Volumes/TrueCrypt 7.1a/TrueCrypt 7.1a.mpkg/Contents/Packages/TrueCrypt.pkg/Contents/Archive.pax.gz' -z -r
 patch -o Info.plist.xml Info.plist.xml.original-7.1a Info.plist.xml.patch
 plutil -convert binary1 -o TrueCrypt.app/Contents/Info.plist Info.plist.xml
-rm -rf '/Volumes/TrueCrypt 7.1a/TrueCrypt 7.1a.mpkg/Contents/Packages/TrueCrypt.pkg'
-pkgbuild --root TrueCrypt.app --identifier org.TrueCryptFoundation.TrueCrypt '/Volumes/TrueCrypt 7.1a/TrueCrypt 7.1a.mpkg/Contents/Packages/TrueCrypt.pkg'
+pax -w -z -x cpio -f '/Volumes/TrueCrypt 7.1a/TrueCrypt 7.1a.mpkg/Contents/Packages/TrueCrypt.pkg/Contents/Archive.pax.gz' ./TrueCrypt.app
 
 # create final dmg
 hdiutil detach '/Volumes/TrueCrypt 7.1a'
 hdiutil convert 'TrueCrypt 7.1a Mac OS X writable.dmg' -format UDBZ -o 'TrueCrypt 7.1a Mac OS X (patched).dmg'
+
+# delete temp files
+rm -rf TrueCrypt.app 'TrueCrypt 7.1a Mac OS X writable.dmg'
 ```
 
 ## Icon problems
