@@ -19,10 +19,11 @@ hdiutil attach 'TrueCrypt 7.1a Mac OS X writable.dmg'
 patch '/Volumes/TrueCrypt 7.1a/TrueCrypt 7.1a.mpkg/Contents/distribution.dist' distribution.dist.patch
 
 # add file association
+pax -f '/Volumes/TrueCrypt 7.1a/TrueCrypt 7.1a.mpkg/Contents/Packages/TrueCrypt.pkg/Contents/Archive.pax.gz' -z -r
 patch -o Info.plist.xml Info.plist.xml.original-7.1a Info.plist.xml.patch
-tar xzf '/Volumes/TrueCrypt 7.1a/TrueCrypt 7.1a.mpkg/Contents/Packages/TrueCrypt.pkg/Contents/Archive.pax.gz'
 plutil -convert binary1 -o TrueCrypt.app/Contents/Info.plist Info.plist.xml
-tar c ./TrueCrypt.app | gzip --best > '/Volumes/TrueCrypt 7.1a/TrueCrypt 7.1a.mpkg/Contents/Packages/TrueCrypt.pkg/Contents/Archive.pax.gz'
+rm -rf '/Volumes/TrueCrypt 7.1a/TrueCrypt 7.1a.mpkg/Contents/Packages/TrueCrypt.pkg'
+pkgbuild --root TrueCrypt.app --identifier org.TrueCryptFoundation.TrueCrypt '/Volumes/TrueCrypt 7.1a/TrueCrypt 7.1a.mpkg/Contents/Packages/TrueCrypt.pkg'
 
 hdiutil detach '/Volumes/TrueCrypt 7.1a'
 hdiutil convert 'TrueCrypt 7.1a Mac OS X writable.dmg' -format UDBZ -o 'TrueCrypt 7.1a Mac OS X (patched).dmg'
