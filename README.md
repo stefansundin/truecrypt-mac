@@ -9,6 +9,8 @@ Changes:
 
 The TrueCrypt binary has not been changed or recompiled.
 
+Important! Since OS X 10.13, the first time you try to mount a volume, TrueCrypt will fail and a message saying "System Extension Blocked" will pop up. You then have to open _System Preferences_ -> _Security & Privacy_ and click the _Allow_ button. If this happens when you create a volume, then the creation will fail. To work around this, simply create a very small file to get this to trigger. If anyone has an idea on how to make this experience better, please open an Issue or Pull Request. See https://developer.apple.com/library/archive/technotes/tn2459/_index.html.
+
 ## Patch it yourself
 
 ```bash
