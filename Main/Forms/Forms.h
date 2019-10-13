@@ -586,7 +586,6 @@ namespace TrueCrypt
 			wxCheckBox* DisplayMessageAfterHotkeyDismountCheckBox;
 			wxStdDialogButtonSizer* StdButtons;
 			wxButton* StdButtonsOK;
-			wxButton* StdButtonsCancel;
 			
 			// Virtual event handlers, overide them in your derived class
 			virtual void OnClose( wxCloseEvent& event ){ event.Skip(); }

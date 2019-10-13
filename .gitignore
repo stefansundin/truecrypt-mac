@@ -3,5 +3,6 @@
 *.bmp.h
 *.xml.h
 *.txt.h
+*.fbp.bak
 
 Main/TrueCrypt*

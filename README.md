@@ -1,4 +1,19 @@
-TrueCrypt
-=========
+# 64-bit TrueCrypt for macOS
 
-TrueCrypt ported to wxWidgets 3.0, and some patches to build a 64-bit version on OS X. See [here](http://www.nerdenmeister.org/2013/08/16/build-truecrypt-on-os-x-64-bit-with-hardware-acceleration/) for details.
+- Compiled for 64-bit and wxWidgets 3.1. Based on https://github.com/neurodroid/TrueCrypt.
+- The file extension `.tc` has been associated with TrueCrypt.
+
+Download [the latest release](https://github.com/stefansundin/truecrypt-mac/releases/latest).
+
+To build, you need:
+```
+brew install nasm pkg-config
+brew cask install osxfuse
+
+# wxWidgets 3.1:
+brew install cdalvaro/tap/wxmac
+```
+
+Get wxFormBuilder for macOS here: https://github.com/wxFormBuilder/wxFormBuilder/releases
+
+For the old 32-bit version, see [this branch](https://github.com/stefansundin/truecrypt-mac/tree/old) and [this release](https://github.com/stefansundin/truecrypt-mac/releases/tag/v3).

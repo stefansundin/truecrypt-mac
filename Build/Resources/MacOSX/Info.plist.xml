@@ -43,5 +43,53 @@
 
 	<key>CSResourcesFileMapped</key>
 	<true/>
+
+	<key>UTExportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeIdentifier</key>
+			<string>org.TrueCryptFoundation.TrueCrypt.file-container</string>
+			<key>UTTypeReferenceURL</key>
+			<string>http://truecrypt.org</string>
+			<key>UTTypeDescription</key>
+			<string>TrueCrypt File Container</string>
+			<key>UTTypeIconFile</key>
+			<string>TrueCrypt.icns</string>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+				<string>public.item</string>
+			</array>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>com.apple.ostype</key>
+				<string>TRUE</string>
+				<key>public.filename-extension</key>
+				<array>
+					<string>tc</string>
+				</array>
+				<key>public.mime-type</key>
+				<string>application/x-truecrypt</string>
+			</dict>
+		</dict>
+	</array>
+
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>TrueCrypt File Container</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>org.TrueCryptFoundation.TrueCrypt.file-container</string>
+			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>TrueCrypt.icns</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSHandlerRank</key>
+			<string>Owner</string>
+		</dict>
+	</array>
 </dict>
 </plist>
