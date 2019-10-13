@@ -9,9 +9,12 @@ To build, you need:
 ```
 brew install nasm pkg-config
 brew cask install osxfuse
+```
 
-# wxWidgets 3.1:
-brew install cdalvaro/tap/wxmac
+You need to replace your wxmac Formula with [this one](Build/Resources/MacOSX/wxmac.rb).
+```
+brew edit wxmac
+brew reinstall wxmac
 ```
 
 Get wxFormBuilder for macOS here: https://github.com/wxFormBuilder/wxFormBuilder/releases

@@ -183,7 +183,8 @@ ifeq "$(shell uname -s)" "Darwin"
 	CXX := g++
 	AS := nasm
 
-	C_CXX_FLAGS += -DTC_UNIX -DTC_BSD -DTC_MACOSX -I./../Pkcs11
+	C_CXX_FLAGS += -DTC_UNIX -DTC_BSD -DTC_MACOSX -I./../Pkcs11 -mmacosx-version-min=10.9
+	LFLAGS += -mmacosx-version-min=10.9
 
 	ASM_OBJ_FORMAT = macho64
 	ASFLAGS += --prefix _
@@ -266,6 +267,8 @@ PROJ_DIRS := Platform Volume Driver/Fuse Core Main
 
 all clean:
 	@if pwd | grep -q ' '; then echo 'Error: source code is stored in a path containing spaces' >&2; exit 1; fi
+
+	rm -rf Main/TrueCrypt.app
 
 	@for DIR in $(PROJ_DIRS); do \
 		PROJ=$$(echo $$DIR | cut -d/ -f1); \
