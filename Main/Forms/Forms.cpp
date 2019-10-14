@@ -545,25 +545,25 @@ WizardFrameBase::WizardFrameBase( wxWindow* parent, wxWindowID id, const wxStrin
 	bSizer70->Add( 0, 0, 1, wxEXPAND, 5 );
 	
 	HelpButton = new wxButton( MainPanel, wxID_HELP, _("&Help"), wxDefaultPosition, wxDefaultSize, 0 );
-	bSizer70->Add( HelpButton, 0, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5 );
+	bSizer70->Add( HelpButton, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
 	
 	
-	bSizer70->Add( 0, 0, 0, wxLEFT|wxALIGN_RIGHT, 5 );
+	bSizer70->Add( 0, 0, 0, wxLEFT, 5 );
 	
 	PreviousButton = new wxButton( MainPanel, wxID_ANY, _("< &Prev"), wxDefaultPosition, wxDefaultSize, 0 );
-	bSizer70->Add( PreviousButton, 0, wxTOP|wxBOTTOM|wxLEFT|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5 );
+	bSizer70->Add( PreviousButton, 0, wxTOP|wxBOTTOM|wxLEFT|wxALIGN_CENTER_VERTICAL, 5 );
 	
 	NextButton = new wxButton( MainPanel, wxID_ANY, _("&Next >"), wxDefaultPosition, wxDefaultSize, 0|wxWANTS_CHARS );
 	NextButton->SetDefault(); 
-	bSizer70->Add( NextButton, 0, wxTOP|wxBOTTOM|wxRIGHT|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5 );
+	bSizer70->Add( NextButton, 0, wxTOP|wxBOTTOM|wxRIGHT|wxALIGN_CENTER_VERTICAL, 5 );
 	
 	
-	bSizer70->Add( 0, 0, 0, wxLEFT|wxALIGN_RIGHT, 5 );
+	bSizer70->Add( 0, 0, 0, wxLEFT, 5 );
 	
 	CancelButton = new wxButton( MainPanel, wxID_CANCEL, _("Cancel"), wxDefaultPosition, wxDefaultSize, 0 );
-	bSizer70->Add( CancelButton, 0, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5 );
+	bSizer70->Add( CancelButton, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
 	
-	bSizer64->Add( bSizer70, 0, wxEXPAND|wxALIGN_RIGHT|wxALL, 5 );
+	bSizer64->Add( bSizer70, 0, wxEXPAND|wxALL, 5 );
 	
 	bSizer63->Add( bSizer64, 1, wxEXPAND, 5 );
 	
@@ -2584,7 +2584,7 @@ VolumeCreationProgressWizardPageBase::VolumeCreationProgressWizardPageBase( wxWi
 	wxStaticText* m_staticText25;
 	m_staticText25 = new wxStaticText( this, wxID_ANY, _("Random Pool:"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText25->Wrap( -1 );
-	fgSizer5->Add( m_staticText25, 0, wxALL|wxALIGN_RIGHT|wxALIGN_BOTTOM, 5 );
+	fgSizer5->Add( m_staticText25, 0, wxALL|wxALIGN_RIGHT, 5 );
 	
 	wxBoxSizer* bSizer126;
 	bSizer126 = new wxBoxSizer( wxHORIZONTAL );
@@ -2593,25 +2593,25 @@ VolumeCreationProgressWizardPageBase::VolumeCreationProgressWizardPageBase( wxWi
 	RandomPoolSampleStaticText->Wrap( -1 );
 	RandomPoolSampleStaticText->SetFont( wxFont( wxNORMAL_FONT->GetPointSize(), 70, 90, 90, false, wxT("Courier New") ) );
 	
-	bSizer126->Add( RandomPoolSampleStaticText, 0, wxEXPAND|wxTOP|wxRIGHT|wxALIGN_BOTTOM, 7 );
+	bSizer126->Add( RandomPoolSampleStaticText, 0, wxEXPAND|wxTOP|wxRIGHT, 7 );
 	
 	DisplayKeysCheckBox = new wxCheckBox( this, wxID_ANY, _("Show"), wxDefaultPosition, wxDefaultSize, 0 );
 	DisplayKeysCheckBox->SetValue(true);
 	
 	bSizer126->Add( DisplayKeysCheckBox, 0, wxEXPAND|wxRIGHT, 5 );
 	
-	fgSizer5->Add( bSizer126, 1, wxEXPAND|wxALIGN_BOTTOM, 5 );
+	fgSizer5->Add( bSizer126, 1, wxEXPAND, 5 );
 	
 	wxStaticText* m_staticText28;
 	m_staticText28 = new wxStaticText( this, wxID_ANY, _("Header Key:"), wxDefaultPosition, wxSize( -1,-1 ), 0 );
 	m_staticText28->Wrap( -1 );
-	fgSizer5->Add( m_staticText28, 0, wxALIGN_RIGHT|wxBOTTOM|wxRIGHT|wxLEFT|wxALIGN_BOTTOM, 5 );
+	fgSizer5->Add( m_staticText28, 0, wxALIGN_RIGHT|wxBOTTOM|wxRIGHT|wxLEFT, 5 );
 	
 	HeaderKeySampleStaticText = new wxStaticText( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
 	HeaderKeySampleStaticText->Wrap( -1 );
 	HeaderKeySampleStaticText->SetFont( wxFont( wxNORMAL_FONT->GetPointSize(), 70, 90, 90, false, wxT("Courier New") ) );
 	
-	fgSizer5->Add( HeaderKeySampleStaticText, 0, wxALIGN_BOTTOM|wxEXPAND|wxTOP|wxRIGHT, 2 );
+	fgSizer5->Add( HeaderKeySampleStaticText, 0, wxEXPAND|wxTOP|wxRIGHT, 2 );
 	
 	wxStaticText* m_staticText29;
 	m_staticText29 = new wxStaticText( this, wxID_ANY, _("Master Key:"), wxDefaultPosition, wxDefaultSize, 0 );
@@ -2622,7 +2622,7 @@ VolumeCreationProgressWizardPageBase::VolumeCreationProgressWizardPageBase( wxWi
 	MasterKeySampleStaticText->Wrap( -1 );
 	MasterKeySampleStaticText->SetFont( wxFont( wxNORMAL_FONT->GetPointSize(), 70, 90, 90, false, wxT("Courier New") ) );
 	
-	fgSizer5->Add( MasterKeySampleStaticText, 0, wxEXPAND|wxALIGN_BOTTOM|wxTOP|wxRIGHT, 2 );
+	fgSizer5->Add( MasterKeySampleStaticText, 0, wxEXPAND|wxTOP|wxRIGHT, 2 );
 	
 	sbSizer31->Add( fgSizer5, 0, wxEXPAND, 5 );
 	
@@ -2663,7 +2663,7 @@ VolumeCreationProgressWizardPageBase::VolumeCreationProgressWizardPageBase( wxWi
 	m_panel12->SetSizer( bSizer115 );
 	m_panel12->Layout();
 	bSizer115->Fit( m_panel12 );
-	bSizer108->Add( m_panel12, 1, wxEXPAND|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
+	bSizer108->Add( m_panel12, 1, wxEXPAND|wxALL, 5 );
 	
 	gSizer6->Add( bSizer108, 1, wxEXPAND, 5 );
 	
@@ -2685,9 +2685,9 @@ VolumeCreationProgressWizardPageBase::VolumeCreationProgressWizardPageBase( wxWi
 	m_panel121->SetSizer( bSizer1151 );
 	m_panel121->Layout();
 	bSizer1151->Fit( m_panel121 );
-	bSizer1081->Add( m_panel121, 1, wxALL|wxEXPAND|wxALIGN_CENTER_VERTICAL, 5 );
+	bSizer1081->Add( m_panel121, 1, wxALL|wxEXPAND, 5 );
 	
-	gSizer6->Add( bSizer1081, 1, wxEXPAND|wxALIGN_CENTER_VERTICAL|wxALIGN_CENTER_HORIZONTAL, 5 );
+	gSizer6->Add( bSizer1081, 1, wxEXPAND, 5 );
 	
 	wxBoxSizer* bSizer1082;
 	bSizer1082 = new wxBoxSizer( wxHORIZONTAL );
@@ -2709,7 +2709,7 @@ VolumeCreationProgressWizardPageBase::VolumeCreationProgressWizardPageBase( wxWi
 	bSizer1152->Fit( m_panel122 );
 	bSizer1082->Add( m_panel122, 1, wxALL|wxEXPAND, 5 );
 	
-	gSizer6->Add( bSizer1082, 1, wxEXPAND|wxALIGN_CENTER_VERTICAL|wxALIGN_RIGHT, 5 );
+	gSizer6->Add( bSizer1082, 1, wxEXPAND, 5 );
 	
 	sbSizer32->Add( gSizer6, 0, wxEXPAND|wxTOP, 2 );
 	
