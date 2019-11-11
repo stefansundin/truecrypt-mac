@@ -13,7 +13,7 @@ brew cask install osxfuse
 
 You need to replace your wxmac Formula with [this one](Build/Resources/MacOSX/wxmac.rb).
 ```
-brew edit wxmac
+EDITOR=subl brew edit wxmac
 brew reinstall wxmac
 ```
 

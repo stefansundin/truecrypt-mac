@@ -6,36 +6,31 @@ class Wxmac < Formula
   head     "https://github.com/wxWidgets/wxWidgets.git"
   bottle   :unneeded
 
-  depends_on "jpeg"
-  depends_on "libpng"
-  depends_on "libtiff"
-
   def install
-    args = [
-      "--prefix=#{prefix}",
-      "--enable-clipboard",
-      "--enable-controls",
-      "--enable-dataviewctrl",
-      "--enable-display",
-      "--enable-dnd",
-      "--enable-graphics_ctx",
-      "--enable-std_string",
-      "--enable-svg",
-      "--enable-unicode",
-      "--enable-webkit",
-      "--with-expat",
-      "--with-libjpeg",
-      "--with-libpng",
-      "--with-libtiff",
-      "--with-opengl",
-      "--with-osx_cocoa",
-      "--with-zlib",
-      "--disable-precomp-headers",
-      # This is the default option, but be explicit
-      "--disable-monolithic",
-      # Set with-macosx-version-min to avoid configure defaulting to 10.5
-      "--with-macosx-version-min=10.9",
-      "--disable-shared",
+    # Based on TrueCrypt's Makefile
+    args = %W[
+      --prefix=#{prefix}
+      --with-macosx-version-min=10.9
+
+      --disable-rearrangectrl --disable-svg --disable-treelist --disable-timepick --disable-dragimage --disable-headerctrl --disable-busyinfo
+      --disable-richmsgdlg --disable-richtooltip --disable-log --disable-loggui --disable-logwin --disable-logdialog --disable-infobar
+      --disable-notifmsg --disable-propgrid --disable-ribbon --disable-stc
+
+      --enable-unicode --disable-shared --disable-dependency-tracking --enable-exceptions --enable-std_string --enable-dataobj --enable-mimetype
+      --disable-protocol --disable-protocols --disable-url --disable-ipc --disable-sockets --disable-fs_inet --disable-ole --disable-docview --disable-clipboard
+      --disable-help --disable-html --disable-mshtmlhelp --disable-htmlhelp --disable-mdi --disable-metafile --disable-webkit
+      --disable-xrc --disable-aui --disable-postscript --disable-printarch
+      --disable-arcstream --disable-fs_archive --disable-fs_zip --disable-tarstream --disable-zipstream
+      --disable-animatectrl --disable-bmpcombobox --disable-calendar --disable-caret --disable-checklst --disable-collpane --disable-colourpicker --disable-comboctrl
+      --disable-datepick --disable-display --disable-dirpicker --disable-filepicker --disable-fontpicker --disable-grid  --disable-dataviewctrl
+      --disable-listbook --disable-odcombobox --disable-sash  --disable-searchctrl --disable-slider --disable-splitter --disable-togglebtn
+      --disable-toolbar --disable-tbarnative --disable-treebook --disable-toolbook --disable-tipwindow --disable-popupwin
+      --disable-commondlg --disable-aboutdlg --disable-coldlg --disable-finddlg --disable-fontdlg --disable-numberdlg --disable-splash
+      --disable-tipdlg --disable-progressdlg --disable-wizarddlg --disable-miniframe --disable-splines --disable-palette
+      --disable-richtext --disable-dialupman --disable-debugreport --disable-filesystem
+      --disable-graphics_ctx --disable-sound --disable-mediactrl --disable-joystick --disable-apple_ieee
+      --disable-gif --disable-pcx --disable-tga --disable-iff --disable-gif --disable-pnm
+      --without-expat --without-libtiff --without-libjpeg --without-libpng --without-regex --without-zlib
     ]
 
     system "./configure", *args
