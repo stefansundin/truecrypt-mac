@@ -199,13 +199,8 @@ ifeq "$(shell uname -s)" "Darwin"
 		C_CXX_FLAGS += -gfull
 		LFLAGS += -Wl,-dead_strip
 
-		WX_CONFIGURE_FLAGS += --enable-universal_binary
 		WXCONFIG_CFLAGS += -gfull
 		WXCONFIG_CXXFLAGS += -gfull
-
-	else
-
-		WX_CONFIGURE_FLAGS += --disable-universal_binary
 
 	endif
 
@@ -242,21 +237,28 @@ CXXFLAGS := $(C_CXX_FLAGS) $(CXXFLAGS) $(TC_EXTRA_CXXFLAGS)
 ASFLAGS += -f $(ASM_OBJ_FORMAT)
 LFLAGS := $(LFLAGS) $(TC_EXTRA_LFLAGS)
 
-WX_CONFIGURE_FLAGS += --enable-unicode -disable-shared --disable-dependency-tracking --disable-compat26 --enable-exceptions --enable-std_string --enable-dataobj --enable-mimetype \
+
+WX_CONFIGURE_FLAGS += \
+	--with-macosx-version-min=10.9 \
+	--enable-unicode --disable-shared --disable-dependency-tracking --enable-exceptions --enable-std_string --enable-dataobj --enable-mimetype \
 	--disable-protocol --disable-protocols --disable-url --disable-ipc --disable-sockets --disable-fs_inet --disable-ole --disable-docview --disable-clipboard \
 	--disable-help --disable-html --disable-mshtmlhelp --disable-htmlhelp --disable-mdi --disable-metafile --disable-webkit \
 	--disable-xrc --disable-aui --disable-postscript --disable-printarch \
 	--disable-arcstream --disable-fs_archive --disable-fs_zip --disable-tarstream --disable-zipstream \
 	--disable-animatectrl --disable-bmpcombobox --disable-calendar --disable-caret --disable-checklst --disable-collpane --disable-colourpicker --disable-comboctrl \
-	--disable-datepick --disable-display --disable-dirpicker --disable-filepicker --disable-fontpicker --disable-grid  --disable-dataviewctrl \
+	--disable-datepick --disable-display --disable-dirpicker --disable-filepicker --disable-fontpicker --disable-grid --disable-dataviewctrl \
 	--disable-listbook --disable-odcombobox --disable-sash  --disable-searchctrl --disable-slider --disable-splitter --disable-togglebtn \
 	--disable-toolbar --disable-tbarnative --disable-treebook --disable-toolbook --disable-tipwindow --disable-popupwin \
 	--disable-commondlg --disable-aboutdlg --disable-coldlg --disable-finddlg --disable-fontdlg --disable-numberdlg --disable-splash \
-	--disable-tipdlg --disable-progressdlg --disable-wizarddlg --disable-miniframe --disable-tooltips --disable-splines --disable-palette \
+	--disable-tipdlg --disable-progressdlg --disable-wizarddlg --disable-miniframe --disable-splines --disable-palette \
 	--disable-richtext --disable-dialupman --disable-debugreport --disable-filesystem \
 	--disable-graphics_ctx --disable-sound --disable-mediactrl --disable-joystick --disable-apple_ieee \
 	--disable-gif --disable-pcx --disable-tga --disable-iff --disable-gif --disable-pnm \
-	--without-expat --without-libtiff --without-libjpeg --without-libpng -without-regex --without-zlib
+	--disable-rearrangectrl --disable-svg --disable-treelist --disable-timepick --disable-dragimage --disable-headerctrl --disable-busyinfo \
+	--disable-richmsgdlg --disable-richtooltip --disable-log --disable-loggui --disable-logwin --disable-logdialog --disable-infobar \
+	--disable-notifmsg --disable-propgrid --disable-ribbon --disable-stc --disable-webview \
+	--without-expat --without-libtiff --without-libjpeg --without-libpng --without-regex --without-zlib \
+	--without-liblzma --without-opengl
 
 
 #------ Project build ------

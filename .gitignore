@@ -1,3 +1,6 @@
+.DS_Store
+Thumbs.db
+
 *.o
 *.a
 *.bmp.h
@@ -5,4 +8,7 @@
 *.txt.h
 *.fbp.bak
 
-Main/TrueCrypt*
+/Main/TrueCrypt*
+/wxrelease
+/wxdebug
+TrueCrypt.app.zip
