@@ -7,6 +7,8 @@ Download [the latest release](https://github.com/stefansundin/truecrypt-mac/rele
 
 ## Build instructions
 
+See [this issue](https://github.com/stefansundin/truecrypt-mac/issues/2) for more help.
+
 Download and extract wxWidgets 3.1.2: https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.2/wxWidgets-3.1.2.tar.bz2
 
 wxWidgets 3.1.3 and 3.1.4 causes TrueCrypt to crash and probably require code changes to fix.
