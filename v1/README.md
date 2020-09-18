@@ -4,6 +4,6 @@
 
 ## Downloads by filename
 
-Filename | Download Count
--------- | --------------
-TrueCrypt-7.1a-Mac-OS-X-patched-v1.dmg | 1
+Filename                               | Download Count
+-------------------------------------- | --------------
+TrueCrypt-7.1a-Mac-OS-X-patched-v1.dmg |              5
