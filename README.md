@@ -17,18 +17,18 @@ wxWidgets 3.1.3 and 3.1.4 causes TrueCrypt to crash and probably require code ch
 
 ```
 brew install nasm pkg-config
-brew cask install osxfuse
+brew cask install macfuse
 ```
 
 ### Preparation if you do not use Homebrew
 
 To build, you will need the following: (the versions here are what I used for the latest release)
 - Xcode Command Line Tools (simply run `make` in a Terminal and you should receive a prompt that offers to install it)
-- osxfuse: https://github.com/osxfuse/osxfuse/releases/download/osxfuse-3.11.0/osxfuse-3.11.0.dmg
+- macFUSE: https://github.com/osxfuse/osxfuse/releases/download/macfuse-4.1.0/macfuse-4.1.0.dmg
 - nasm: https://www.nasm.us/pub/nasm/releasebuilds/2.15.05/macosx/nasm-2.15.05-macosx.zip
 - pkg-config: https://pkgconfig.freedesktop.org/releases/pkg-config-0.29.2.tar.gz
 
-Download and install osxfuse. Download and extract the other files.
+Download and install macFUSE. Download and extract the other files.
 
 ```
 # nasm provides binaries but you have to build pkg-config:
