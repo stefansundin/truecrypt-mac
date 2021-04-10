@@ -56,6 +56,8 @@ namespace TrueCrypt
 #elif defined (TC_MACOSX)
 #	ifdef __ppc__
 		faultingInstructionAddress = context->uc_mcontext->ss.srr0;
+#	elif defined (__arm__) || defined (__arm64__)
+		faultingInstructionAddress = context->uc_mcontext->__ss.__pc;
 #	elif defined (__x86_64__)
 		faultingInstructionAddress = context->uc_mcontext->__ss.__rip;
 #	else

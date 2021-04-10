@@ -128,7 +128,11 @@ else ifeq "$(ARCH)" "unknown"
 endif
 
 ifeq "$(shell uname -s)" "Darwin"
-	CPU_ARCH = x64
+	ifeq "$(shell uname -m)" "arm64"
+		CPU_ARCH = arm64
+	else
+		CPU_ARCH = x64
+	endif
 	ASM_OBJ_FORMAT = macho64
 else ifneq (,$(filter i386 i486 i586 i686 x86,$(ARCH)))
 	CPU_ARCH = x86
